@@ -1,24 +1,23 @@
-# Typescript monorepo (typescript project references)
+# Typescript monorepo (npm workspaces + typescript project references)
 
-## Dependencies:
-
-- [pnpm](https://pnpm.js.org/): can be obtained through yarn on npm
+Demoes how CRA based package can depend on another local package, including another CRA based package.
 
 ## Bootstrap:
 
-- `pnpm run workspace--install`
+- `npm install`
 
 ## When developing
 
 Run global type checking with:
 
-- `pnpm run workspace--start`
+- `npm run tsc-watch-references`
 
 keep this running, since it is responsible for emitting package code.
 
 Then start the development process for the project your are working on e.g.
 
-- `pnpm run company--app`
+- `npm run company-app-start`
+- `npm run company-components-start`
 
 See the top-level `package.json` for further examples.
 
@@ -26,4 +25,4 @@ See the top-level `package.json` for further examples.
 
 In case you would end up in a corrupted state please run:
 
-- `pnpm run workspace--build`
+- `npm run tsc-build-references`
